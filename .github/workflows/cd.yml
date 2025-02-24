@@ -13,16 +13,11 @@ jobs:
           ref: ${{ github.event.release.target_commitish }}
       - uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: 22.x
           registry-url: https://registry.npmjs.org/
       - run: npm ci
-      - run: git config --global user.name "GitHub CD bot"
-      - run: git config --global user.email "github-cd-bot@example.com"
       - run: npm run build
       - run: npm test
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - run: git push
-        env:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: JS-DevTools/npm-publish@19c28f1ef146469e409470805ea4279d47c3d35c
+        with:
+          token: ${{ secrets.GH_TOKEN }}

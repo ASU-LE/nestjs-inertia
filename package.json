@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-inertia",
+  "name": "@asu-le/nestjs-inertia",
   "version": "1.0.1",
   "description": "Unofficial NestJS (express platform) adapter for InertiaJS.",
   "license": "MIT",
