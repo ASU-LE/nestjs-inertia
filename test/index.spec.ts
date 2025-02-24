@@ -38,6 +38,7 @@ describe('test', () => {
         version: '1'
       });
 
+      // @ts-ignore
       return request(server)
         .get('/users')
         .expect(200)
@@ -58,6 +59,7 @@ describe('test', () => {
         version: '1'
       });
 
+      // @ts-ignore
       return request(server)
         .get('/users/2')
         .expect(200)
@@ -67,6 +69,7 @@ describe('test', () => {
 
   describe('should return a redirection', () => {
     it('DELETE /users/2', () => {
+      // @ts-ignore
       return request(server)
         .delete('/users/2')
         .expect(303);
